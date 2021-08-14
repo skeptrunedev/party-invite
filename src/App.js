@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useState, useEffect} from "react"; 
-import { Container, Form, Button } from "react-bootstrap";
+import 'react-phone-number-input/style.css'
+import React, {useState} from "react"; 
+import PhoneInput from 'react-phone-number-input'; 
 
 function App() {
   const [number, setNumber] = useState("");
@@ -16,7 +16,7 @@ function App() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ to: number, body: body }),
+      body: JSON.stringify({ to: number}),
     });
 
     const data = await res.json();
@@ -31,30 +31,26 @@ function App() {
   };
 
   return (
-    <div> 
-      <Container>
-        <h2>Send SMS</h2>
-        <Form onSubmit={onSubmit}>
-          <Form.Group>
-            <Form.Label htmlFor="to">To</Form.Label>
-            <Form.Control value={number} onChange={(e) => setNumber(e.target.value)} />
-          </Form.Group>
+    <div class="content"> 
+      <div class="header"> 
+        <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon.png' alt="illuminati"/> 
+        <p> Conspiracy Party </p> 
+      </div> 
 
-          <Form.Group>
-            <Form.Label htmlFor="message">Body</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows="3"
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
-            />
-          </Form.Group>
+      <div class="message"> 
+        <img id="jre_aliens" src='https://www.nicholaskhami.com/images/jre_aliens.jpg' alt="illuminati"/> 
+        <p> Dress Up to Rep Your Favorite Conspiracy </p>
+      </div> 
 
-          <Button variant="primary" type="submit">
-            Send
-          </Button>
-        </Form>
-      </Container>
+      <div class="phone_form"> 
+        <PhoneInput defaultCountry="US" placeholder="Enter Phone Number" value={number} onChange={setNumber} />
+        <button onClick={onSubmit}> RSVP FOR LOCATION </button>
+      </div> 
+
+      <div class="footer"> 
+        {/* <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon.png' alt="illuminati"/>  */}
+        <p> Saturday, August 21 10pm</p> 
+      </div> 
     </div> 
   )
 }
