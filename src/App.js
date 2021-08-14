@@ -1,12 +1,11 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-phone-number-input/style.css'
+import 'react-phone-input-2/lib/style.css'
 import React, {useState} from "react"; 
-import PhoneInput from 'react-phone-number-input'; 
+import PhoneInput from 'react-phone-input-2'
 
 function App() {
   const [number, setNumber] = useState("");
-  const [body, setBody] = useState("");
+  const [setBody] = useState("");
 
   const onSubmit = async (e) => {
     await e.preventDefault();
@@ -43,8 +42,9 @@ function App() {
       </div> 
 
       <div class="phone_form"> 
-        <PhoneInput defaultCountry="US" placeholder="Enter Phone Number" value={number} onChange={setNumber} />
-        <button onClick={onSubmit}> RSVP FOR LOCATION </button>
+        <PhoneInput country='us' placeholder="Enter Phone Number" countryCodeEditable="false" regions={['america', 'europe', 'asia', 'oceania', 'africa']} value={number} onChange={setNumber} />
+        <button class="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
+        <p class="attendeeCount">Current Attendee Count: 12</p> 
       </div> 
 
       <div class="footer"> 
