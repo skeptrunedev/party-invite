@@ -81,7 +81,7 @@ code {
   font-family: 'Special Elite', cursive;
   font-size: 30px;
   text-align: center;
-  margin-bottom: 2%; 
+  margin-bottom: 3%; 
 }
 
 .phone_form {
@@ -126,5 +126,65 @@ code {
 @media (min-width: 635px) {
   body {
     background-position-y: center; 
+  }
+}
+
+@media (min-width: 525px) {
+  body {
+    background-position-y: center; 
+  }
+
+  .message {
+    width: 450px;
+  }
+
+  .header {
+    margin-top: 10px; 
+  }
+
+  .footer {
+    margin-bottom: 10px;
+  }
+
+  .phone_form {
+    width: 450px;
+  }
+}
+
+@media (min-width: 570px) {
+  body {
+    background-position-y: center; 
+  }
+
+  .message {
+    width: 500px;
+  }
+
+  .phone_form {
+    width: 500px;
+  }
+}
+
+@media (max-height: 670px) {
+  .message {
+    margin-top: -10px; 
+  }
+
+  .phone_form {
+    margin-top: 0px;
+  }
+
+  #jre_aliens {
+    width: 80%;
+  }
+
+  .message p {
+    font-size: 18px; 
+  }
+}
+
+@media (max-height: 570px) {
+  .message p {
+    font-size: 15px; 
   }
 }
