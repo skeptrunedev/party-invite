@@ -65,11 +65,11 @@ code {
   text-transform: uppercase;
   font-family: 'Special Elite', cursive;;
   font-size: 30px;
-  margin-top: 2%; 
+  margin-top: 1%; 
 }
 
 .header p {
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .footer {
@@ -162,6 +162,13 @@ code {
 
   .phone_form {
     width: 500px;
+  }
+}
+
+@media (max-height: 825px) {
+  .footer {
+    margin-bottom: 80px; 
+    margin-top: -40px;  
   }
 }
 
