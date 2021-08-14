@@ -16,7 +16,7 @@ export default async (req, res) => {
     client.messages.create({
         from: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
         to: req.body.to,
-        body: "Hey! The address for the party is 2505 San Gabriel St. Apt 305. You can text Nick at 248-761-4355 for more information.",
+        body: "Hey! The address for the party is 2505 San Gabriel St. Apt 305. You can text the host at 248-761-4355 for more information.",
     })
     .then(() => {
         res.send(JSON.stringify({ success: true }));
