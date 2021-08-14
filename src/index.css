@@ -165,7 +165,7 @@ code {
   }
 }
 
-@media (min-height: 825px) {
+@media (min-height: 790px) {
   .footer {
     margin-bottom: 80px; 
     margin-top: -40px;  
