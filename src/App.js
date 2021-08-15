@@ -69,7 +69,7 @@ function App() {
             <input className="name" id="nameInput" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/>
           </div> 
           <button className="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
-          <p className="attendeeCount">Current Attendee Count: 12</p> 
+          <p className="attendeeCount">Current Attendee Count: 14</p> 
         </div> 
       </div> 
 
