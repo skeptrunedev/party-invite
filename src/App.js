@@ -28,8 +28,7 @@ function App() {
         await setNumber("");
         await setName("");
       } else {
-        await setNumber("An Error has occurred.");
-        await setName("An Error has occurred.");
+        console.log("failure with data: " + data);
       }
     }
     else {
