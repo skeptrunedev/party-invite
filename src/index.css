@@ -18,7 +18,7 @@ code {
 .content {
   display: flex; 
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: space-between; 
   align-items: center;
   background-color: #0c0c0c; 
   height: 100vh;
@@ -91,6 +91,7 @@ code {
   font-size: 30px;
   text-align: center;
   margin-top: 40px; 
+  margin-bottom: 20px; 
 }
 
 .phone_container {
@@ -198,7 +199,7 @@ code {
   }
 
   .footer {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   .phone_form {
@@ -228,18 +229,6 @@ code {
 
   .phone_form {
     width: 500px;
-  }
-}
-
-@media (min-height: 700px) {
-  .footer {
-    margin-bottom: 60px; 
-  }
-}
-
-@media (min-height: 790px) {
-  .footer {
-    margin-bottom: 80px; 
   }
 }
 
