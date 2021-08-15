@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Bowlby+One+SC&family=Monoton&family=Palette+Mosaic&family=Roboto+Mono:wght@500&family=Roboto:wght@500&family=STIX+Two+Text:wght@500&family=Sigmar+One&family=Special+Elite&family=Tourney:wght@700&display=swap');
 
+html {
+  background-color: #0c0c0c; 
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-size: cover; 
+  background-color: #0c0c0c; 
 }
 
 code {
