@@ -2,6 +2,7 @@ import './App.css';
 import 'react-phone-input-2/lib/style.css'
 import React, {useState} from "react"; 
 import PhoneInput from 'react-phone-input-2'
+import ReactGA from 'react-ga'; 
 
 function App() {
   const [number, setNumber] = useState("");
@@ -41,6 +42,9 @@ function App() {
     }
   };
 
+  ReactGA.initialize('G-9DJ2P81GGG'); 
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  
   return (
     <div className="content"> 
       <div className="header"> 
