@@ -21,6 +21,7 @@ code {
   justify-content: flex-start; 
   align-items: center;
   background-color: #0c0c0c; 
+  height: 100vh;
 }
 
 #illuminati_icon {
