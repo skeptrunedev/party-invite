@@ -42,9 +42,9 @@ function App() {
     }
   };
 
-  ReactGA.initialize('G-9DJ2P81GGG'); 
+  ReactGA.initialize('UA-154971148-8'); 
   ReactGA.pageview(window.location.pathname + window.location.search);
-  
+
   return (
     <div className="content"> 
       <div className="header"> 
