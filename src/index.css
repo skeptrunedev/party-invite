@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Bowlby+One+SC&family=Monoton&family=Palette+Mosaic&family=Roboto+Mono:wght@500&family=Roboto:wght@500&family=STIX+Two+Text:wght@500&family=Sigmar+One&family=Special+Elite&family=Tourney:wght@700&display=swap');
 
+html {
+  overflow: hidden !important; 
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,9 +14,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-size: cover; 
   width: 100vw;
+  overflow: hidden; 
 }
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -21,11 +25,12 @@ code {
 .content {
   display: flex; 
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: flex-start; 
   align-items: center;
-  background-color: #252525; 
-  height: 100vh; 
+  background-color: #0c0c0c; 
   width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 #illuminati_icon {
@@ -44,9 +49,8 @@ code {
   width: 95%;
   color: white; 
   padding: 2.5%; 
-  background-color: #292626;
-  /* box-shadow: 2px 2px 2px 2px #22213d; */
-  margin-top: -60px; 
+  background-color: #0e0e0e;
+  margin-top: 10px;
 }
 
 .message p {
@@ -55,41 +59,65 @@ code {
   text-align: center;
   font-size: 24px; 
   font-family: 'Bowlby One SC', cursive;
+  color: #F9EF43;
 }
 
 .header {
   display: flex; 
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #F9D143;
+  justify-content: flex-start;
+  color: #D143F9;
   text-transform: uppercase;
   font-family: 'Special Elite', cursive;;
   font-size: 30px;
 }
 
+.header_icon {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
 .header p {
   margin-top: 40px;
+  padding-left: 8px; 
+}
+
+#time {
+  margin-top: -15px; 
+  font-size: 24px;
+  color: #D143F9;
 }
 
 .footer {
   display: flex; 
   align-items: center;
   justify-content: center;
-  color: #F9D143;
+  color: #D143F9;
   text-transform: uppercase;
   font-family: 'Special Elite', cursive;
   font-size: 30px;
   text-align: center;
-  margin-bottom: 3%; 
+  margin-top: 40px; 
 }
 
-.phone_form {
-  margin-top: -40px; 
+.phone_container {
+  background-color: #0e0e0e;
+  width: 100%;
+  margin-top: 10px; 
   display: flex; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.phone_form {
   width: 90%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .react-tel-input .form-control {
@@ -103,7 +131,7 @@ code {
   padding: 5px; 
   border-radius: 6px;
   font-size: 16px; 
-  background-color: #F9D143;
+  background-color: #44cfb1;
   border: 2px solid #292626;
   text-transform: uppercase;
   color: #0D1912; 
@@ -114,7 +142,7 @@ code {
 .attendeeCount {
   margin-top: 0px; 
   padding-top: 4px; 
-  color: #505050;
+  color: #636262;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -150,6 +178,17 @@ code {
   }
 }
 
+@media (min-width: 310px) {
+  .header p {
+    padding-left: 0px; 
+    font-size: 26px; 
+  }
+
+  .footer {
+    font-size: 26px; 
+  }
+}
+
 @media (min-width: 570px) {
   body {
     background-position-y: center; 
@@ -164,18 +203,19 @@ code {
   }
 }
 
+@media (min-height: 700px) {
+  .footer {
+    margin-bottom: 60px; 
+  }
+}
+
 @media (min-height: 790px) {
   .footer {
     margin-bottom: 80px; 
-    margin-top: -40px;  
   }
 }
 
 @media (max-height: 670px) {
-  .message {
-    margin-top: -10px; 
-  }
-
   .phone_form {
     margin-top: 0px;
   }

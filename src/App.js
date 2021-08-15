@@ -32,8 +32,11 @@ function App() {
   return (
     <div class="content"> 
       <div class="header"> 
-        <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon.png' alt="illuminati"/> 
-        <p> Conspiracy Party </p> 
+        <div class="header_icon">
+          <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon_yellow.png' alt="illuminati"/> 
+          <p> Conspiracy Party </p> 
+        </div> 
+        <p id="time"> Saturday, August 21 10pm</p> 
       </div> 
 
       <div class="message"> 
@@ -41,15 +44,19 @@ function App() {
         <p> Dress Up to Rep Your Favorite Conspiracy </p>
       </div> 
 
-      <div class="phone_form"> 
-        <PhoneInput country='us' placeholder="Enter Phone Number" countryCodeEditable="false" regions={['america', 'europe', 'asia', 'oceania', 'africa']} value={number} onChange={setNumber} />
-        <button class="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
-        <p class="attendeeCount">Current Attendee Count: 12</p> 
+      <div class="phone_container">
+        <div class="phone_form"> 
+          <PhoneInput country='us' placeholder="Enter Phone Number" countryCodeEditable="false" regions={['america', 'europe', 'asia', 'oceania', 'africa']} value={number} onChange={setNumber} />
+          <button class="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
+          <p class="attendeeCount">Current Attendee Count: 12</p> 
+        </div> 
       </div> 
 
       <div class="footer"> 
-        {/* <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon.png' alt="illuminati"/>  */}
-        <p> Saturday, August 21 10pm</p> 
+        <div class="header_icon">
+          <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon_yellow.png' alt="illuminati"/> 
+          <p> Conspiracy Party </p> 
+        </div>  
       </div> 
     </div> 
   )
