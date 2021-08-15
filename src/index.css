@@ -8,7 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-size: cover; 
-  width: 100vw;
 }
 
 code {
@@ -22,8 +21,6 @@ code {
   justify-content: flex-start; 
   align-items: center;
   background-color: #0c0c0c; 
-  width: 100vw; 
-  height: 100vh; 
 }
 
 #illuminati_icon {
@@ -32,7 +29,7 @@ code {
 }
 
 #jre_aliens {
-  width: 100%;
+  width: 98%;
 }
 
 .message {
@@ -41,7 +38,7 @@ code {
   align-items: center;
   width: 95%;
   color: white; 
-  padding: 1em; 
+  padding: .5em; 
   /* background-color: #0e0e0e; */
   margin-top: 10px;
 }
