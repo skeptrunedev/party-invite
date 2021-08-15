@@ -5,55 +5,73 @@ import PhoneInput from 'react-phone-input-2'
 
 function App() {
   const [number, setNumber] = useState("");
-  const [setBody] = useState("");
+  const [name, setName] = useState("");
 
   const onSubmit = async (e) => {
-    await e.preventDefault();
+    document.getElementById('nameInput').classList.remove("error");
+    document.getElementById("phoneInput").classList.remove("error"); 
 
-    const res = await fetch("/api/sendMessage", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ to: number}),
-    });
+    if(name !== '' && number.length === 11) {
+      await e.preventDefault();
 
-    const data = await res.json();
+      const res = await fetch("/api/sendMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ to: number, name: name}),
+      });
 
-    if (data.success) {
-      await setNumber("");
-      await setBody("");
-    } else {
-      await setNumber("An Error has occurred.");
-      await setBody("An Error has occurred.");
+      const data = await res.json();
+
+      if (data.success) {
+        await setNumber("");
+        await setName("");
+      } else {
+        await setNumber("An Error has occurred.");
+        await setName("An Error has occurred.");
+      }
+    }
+    else {
+      if(name === '') {
+        document.getElementById('nameInput').classList.add("error");
+      }
+      if(number.length !== 11) {
+        document.getElementById("phoneInput").classList.add("error"); 
+      }
     }
   };
 
   return (
-    <div class="content"> 
-      <div class="header"> 
-        <div class="header_icon">
+    <div className="content"> 
+      <div className="header"> 
+        <div className="header_icon">
           <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon_yellow.png' alt="illuminati"/> 
           <p> Conspiracy Party </p> 
         </div> 
         <p id="time"> Saturday, August 21 10pm</p> 
       </div> 
 
-      <div class="message"> 
+      <div className="message"> 
         <img id="jre_aliens" src='https://www.nicholaskhami.com/images/jre_aliens.jpg' alt="illuminati"/> 
         <p> Dress Up to Rep Your Favorite Conspiracy </p>
       </div> 
 
-      <div class="phone_container">
-        <div class="phone_form"> 
-          <PhoneInput country='us' placeholder="Enter Phone Number" countryCodeEditable="false" regions={['america', 'europe', 'asia', 'oceania', 'africa']} value={number} onChange={setNumber} />
-          <button class="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
-          <p class="attendeeCount">Current Attendee Count: 12</p> 
+      <div className="phone_container">
+        <div className="phone_form"> 
+          <div id="inputs">
+            <span id="phoneInput"> 
+              <PhoneInput country='us' placeholder="(000) 000-0000" regions={['america', 'europe', 'asia', 'oceania', 'africa']} value={number} onChange={setNumber} />
+            </span> 
+            <input className="name" id="nameInput" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/>
+          </div> 
+          <button className="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
+          <p className="attendeeCount">Current Attendee Count: 12</p> 
         </div> 
       </div> 
 
-      <div class="footer"> 
-        <div class="header_icon">
+      <div className="footer"> 
+        <div className="header_icon">
           <img id="illuminati_icon" src='https://www.nicholaskhami.com/images/illuminati_icon_yellow.png' alt="illuminati"/> 
           <p> Conspiracy Party </p> 
         </div>  

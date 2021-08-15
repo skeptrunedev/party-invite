@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Bowlby+One+SC&family=Monoton&family=Palette+Mosaic&family=Roboto+Mono:wght@500&family=Roboto:wght@500&family=STIX+Two+Text:wght@500&family=Sigmar+One&family=Special+Elite&family=Tourney:wght@700&display=swap');
 
 html {
-  overflow: hidden !important; 
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden !important; 
 }
 
 body {
@@ -14,7 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-size: cover; 
   width: 100vw;
-  overflow: hidden; 
 }
 
 code {
@@ -29,8 +27,6 @@ code {
   align-items: center;
   background-color: #0c0c0c; 
   width: 100vw; 
-  height: 100vh; 
-  overflow: hidden; 
 }
 
 #illuminati_icon {
@@ -48,7 +44,7 @@ code {
   align-items: center;
   width: 95%;
   color: white; 
-  padding: 2.5%; 
+  padding: 1em; 
   background-color: #0e0e0e;
   margin-top: 10px;
 }
@@ -120,8 +116,40 @@ code {
   justify-content: center;
 }
 
+#inputs {
+  display: flex; 
+  align-content: flex-start;
+  width: 100%;
+}
+
+#inputs .name {
+  width: 50%;
+  color: black; 
+  padding-left: 10px;
+  background-color: white; 
+  border: 1px solid #CACACA;
+  border-radius: 5px;
+  outline: none !important; 
+}
+
+#phoneInput {
+  width: 100%; 
+}
+
 .react-tel-input .form-control {
-  width: 100% !important; 
+  width: 97% !important; 
+}
+
+.error .react-tel-input .form-control {
+  border: 1px solid red !important;
+}
+
+.error {
+  border-color: red !important;
+}
+
+.error .flag-dropdown{
+  border-right: 1px solid red !important; 
 }
 
 .submit {
@@ -137,6 +165,11 @@ code {
   color: #0D1912; 
   font-weight: bold;
   font-family: 'Roboto Mono', monospace;
+}
+
+.submit:active {
+  background-color: #D143F9;
+  color: white; 
 }
 
 .attendeeCount {
