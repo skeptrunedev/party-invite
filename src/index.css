@@ -23,6 +23,7 @@ code {
   align-items: center;
   background-color: #0c0c0c; 
   width: 100vw; 
+  height: 100vh; 
 }
 
 #illuminati_icon {
