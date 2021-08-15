@@ -6,12 +6,6 @@ const client = require("twilio")(
 export default async (req, res) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
-}
-  
-
-export default async (req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
 
     client.messages.create({
         from: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
