@@ -7,13 +7,20 @@ import ReactGA from 'react-ga';
 function App() {
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  function isValidPhoneNumber(p) {
+    const regexFilter = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s./0-9]{8,14}$/g;
+    return regexFilter.test(p);
+  }
 
   const onSubmit = async (e) => {
     document.getElementById('nameInput').classList.remove("error");
     document.getElementById("phoneInput").classList.remove("error"); 
 
-    if(name !== '' && number.length === 11) {
+    if(name !== '' && isValidPhoneNumber(number)) {
       await e.preventDefault();
+      setLoading(true);
 
       const res = await fetch("/api/sendMessage", {
         method: "POST",
@@ -26,11 +33,13 @@ function App() {
       const data = await res.json();
 
       if (data.success) {
-        await setNumber("");
-        await setName("");
+        setNumber("+1");
+        setName("");
       } else {
         console.log("failure with data: " + data);
       }
+
+      setLoading(false);
     }
     else {
       if(name === '') {
@@ -44,6 +53,13 @@ function App() {
 
   ReactGA.initialize('UA-154971148-8'); 
   ReactGA.pageview(window.location.pathname + window.location.search);
+
+  function getButtonText() {
+    if(loading) {
+      return "SENDING CONFIRMATION...";
+    }
+    return "RSVP FOR LOCATION";
+  }
 
   return (
     <div className="content"> 
@@ -68,7 +84,7 @@ function App() {
             </span> 
             <input className="name" id="nameInput" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/>
           </div> 
-          <button className="submit" onClick={onSubmit}> RSVP FOR LOCATION </button>
+          <button className={loading ? "submit animate-flicker" : "submit submit-active"} disabled={loading} onClick={loading ? () => {} : onSubmit}> {getButtonText()} </button>
           <p className="attendeeCount">Current Attendee Count: 14</p> 
         </div> 
       </div> 

@@ -168,7 +168,7 @@ code {
   font-family: 'Roboto Mono', monospace;
 }
 
-.submit:active {
+.submit-active:active {
   background-color: #D143F9;
   color: white; 
 }
@@ -182,6 +182,15 @@ code {
 
 .footer p {
   margin-top: 28px;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+}
+
+.animate-flicker {
+    background-color: #FF5F1F;
+    animation: fadeIn .4s infinite alternate !important;
 }
 
 @media (min-width: 635px) {
